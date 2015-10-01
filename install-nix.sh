@@ -12,11 +12,12 @@ sudo chown $USER /nix
 echo "Downloading and installing Nix"
 cd /
 #curl http://hydra.nixos.org/build/6039370/download/1/nix-1.6-x86_64-darwin.tar.bz2 | sudo tar xjf -
-curl http://hydra.nixos.org/build/17897581/download/1/nix-1.8-x86_64-darwin.tar.bz2 | sudo tar xjf -
-./nix-1.8-x86_64-darwin/install
+#curl http://hydra.nixos.org/build/17897581/download/1/nix-1.8-x86_64-darwin.tar.bz2 | sudo tar xjf -
+curl http://hydra.nixos.org/build/25489764/download/1/nix-1.10-x86_64-darwin.tar.bz2 | sudo tar xjf -
+./nix-1.10-x86_64-darwin/install
 sudo chown -R $USER /nix
-rm -f /usr/local/etc/profile.d/nix.sh
-nix-finish-install
+rm -f /usr/local/etc/profile.d/nix.sh #Not sure this is still needed.
+#nix-finish-install
 
 echo "Adding environment variables to ~/.profile"
 RCFILE=~/.profile
