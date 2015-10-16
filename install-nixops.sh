@@ -2,7 +2,4 @@
 
 source ~/.profile
 echo "Installing NixOps"
-cd ~
-git clone git://github.com/NixOS/nixops.git
-nix-channel --update
-nix-env -I nixops -i nixops
+nix-install-package --non-interactive --url http://hydra.nixos.org/build/26740088/nix/pkg/nixops-1.3.1-x86_64-darwin.nixpkg
