@@ -10,14 +10,8 @@ sudo chown $USER /nix
 ./attach-disk.sh
 
 echo "Downloading and installing Nix"
-cd /
-#curl http://hydra.nixos.org/build/6039370/download/1/nix-1.6-x86_64-darwin.tar.bz2 | sudo tar xjf -
-#curl http://hydra.nixos.org/build/17897581/download/1/nix-1.8-x86_64-darwin.tar.bz2 | sudo tar xjf -
-curl http://hydra.nixos.org/build/25489764/download/1/nix-1.10-x86_64-darwin.tar.bz2 | sudo tar xjf -
-./nix-1.10-x86_64-darwin/install
 sudo chown -R $USER /nix
-rm -f /usr/local/etc/profile.d/nix.sh #Not sure this is still needed.
-#nix-finish-install
+curl https://nixos.org/nix/install | sh
 
 echo "Adding environment variables to ~/.profile"
 RCFILE=~/.profile
